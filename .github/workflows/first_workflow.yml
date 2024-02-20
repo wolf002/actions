@@ -1,0 +1,10 @@
+name: first workflow
+on: [push]
+jobs:
+  run-first-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a
+        run: echo "a first command"
+      - name: echo b
+        run: echo "b second command"
