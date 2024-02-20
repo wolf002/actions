@@ -8,3 +8,9 @@ jobs:
         run: echo "a first command"
       - name: echo b
         run: echo "b second command"
+      - name: Multi line commnad
+        run: |
+          node -v
+          npm -v
+          python -V
+          pip -V
