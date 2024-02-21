@@ -1,0 +1,31 @@
+name: second workflow
+on: [push]
+jobs:
+  run-first-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ubuntu Multi line commnad
+        run: |
+          node -v
+          npm -v
+          python -V
+          pip -V
+  run-parallel-commands:
+    runs-on: windows-latest
+    steps:
+      - name: windows Multi line commnad
+        run: |
+          node -v
+          npm -v
+          python -V
+          pip -V
+  run-second-commnads:
+    runs-on: macos-latest
+    needs: [run-first-commnads]
+    steps:
+      - name: macos Multi line commnad
+        run: |
+          node -v
+          npm -v
+          python -V
+          pip -V
