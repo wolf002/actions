@@ -4,7 +4,8 @@ jobs:
   run-first-commnads:
     runs-on: ubuntu-latest
     steps:
-      - name: Multi line commnad
-        run: |
-          pwd
-          ls -a
+      - name: List file and copy repo
+        run: ls -a
+      - uses: actions/checkout@v4
+      - name: List file
+        run: ls -a
