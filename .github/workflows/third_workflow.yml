@@ -4,8 +4,14 @@ jobs:
   run-first-commnads:
     runs-on: ubuntu-latest
     steps:
-      - name: List file and copy repo
+      - name: List file before
         run: ls -a
-      - uses: actions/checkout@v4
-      - name: List file
+      #- uses: actions/checkout@v4
+      - name: copy repo
+        run: |
+          git init
+          git remote add origin https:/${GITHUB_ACTOR}:${{secrets.GITHUB_TOKEN}}@/github.com/wolf002/${GITHUB_REPOSITORY}.git
+          git fetch origin
+          git checkout origin/main
+      - name: List file after
         run: ls -a
