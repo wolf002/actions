@@ -1,0 +1,10 @@
+name: third workflow
+on: [push]
+jobs:
+  run-first-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Multi line commnad
+        run: |
+          pwd
+          ls -a
