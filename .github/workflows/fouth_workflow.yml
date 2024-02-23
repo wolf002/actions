@@ -1,0 +1,11 @@
+name: fouth workflow
+on:
+  workflow_run:
+    workflows: [third_workflow]
+    types: [completed]
+jobs:
+  hellow-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hellow from fouth workflow"
+        run: echo "Hellow from fouth workflow"
