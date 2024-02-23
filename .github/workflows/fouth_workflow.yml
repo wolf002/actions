@@ -2,7 +2,8 @@ name: fouth workflow
 on:
   workflow_run:
     workflows: [third_workflow]
-    types: [completed]
+    types:
+      - completed
 jobs:
   hellow-commnads:
     runs-on: ubuntu-latest
