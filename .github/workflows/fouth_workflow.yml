@@ -1,7 +1,7 @@
 name: fouth workflow
 on:
   workflow_run:
-    workflows: [third_workflow]
+    workflows: [third workflow]
     types:
       - completed
 jobs:
