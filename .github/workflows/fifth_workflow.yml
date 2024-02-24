@@ -7,5 +7,5 @@ jobs:
       - name: Event vars
         run: |
           echo "name: fifth workflow"
-          echo $GITHAB_SHA
-          echo $GITHAB_REF
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
