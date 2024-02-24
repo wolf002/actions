@@ -1,0 +1,10 @@
+name: fifth workflow
+on: [push, issues, pull_request]
+jobs:
+  run-first-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event vars
+        run: |
+          echo GITHAB_SHA
+          echo GITHAB_REF
