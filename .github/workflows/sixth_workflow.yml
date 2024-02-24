@@ -1,0 +1,17 @@
+name: sixth workflow
+on:
+  push:
+    branches:
+      - main
+      - "page/*"
+    paths:
+      - "**.html"
+jobs:
+  run-first-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event vars
+        run: |
+          echo "name: sixth workflow"
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
