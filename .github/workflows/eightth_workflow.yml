@@ -14,5 +14,4 @@ jobs:
       - name: Event vars
         run: |
           echo "name: sixth workflow"
-          echo $GITHUB_SHA
-          echo $GITHUB_REF
+          echo "Title: ${{ github.event.inputs.titleCustom }}"
