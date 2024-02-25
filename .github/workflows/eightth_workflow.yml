@@ -1,7 +1,12 @@
-name: seventh workflow
+name: eightth workflow
 on:
-  schedule:
-    - cron: "33 6 * * *"
+  workflow_dispatch:
+    inputs:
+      titleCustom:
+        description: "Title of the issue"
+        required: true
+        default: "New issue"
+        type: string
 jobs:
   run-first-commnads:
     runs-on: ubuntu-latest
