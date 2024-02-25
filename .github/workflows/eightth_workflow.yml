@@ -7,11 +7,27 @@ on:
         required: true
         default: "New issue"
         type: string
+      selectCustom:
+        description: "Select value"
+        type: choice
+        required: true
+        options:
+          - option1
+          - option2
+          - option3
+        default: option2
+      checkboxCustom:
+        description: "Checkbox"
+        type: boolean
+        default: false
+        required: false
 jobs:
-  run-first-commnads:
+  run-eight-commnads:
     runs-on: ubuntu-latest
     steps:
       - name: Event vars
         run: |
-          echo "name: sixth workflow"
+          echo "name: ${{ github.event.workflow }}"
           echo "Title: ${{ github.event.inputs.titleCustom }}"
+          echo "Selsect: ${{ github.event.inputs.selectCustom }}"
+          echo "Checkbox: ${{ github.event.inputs.checkboxCustom }}"
