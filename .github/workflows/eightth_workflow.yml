@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Event vars
         run: |
-          echo "name: ${{ github.event.workflow }}"
+          echo "name: ${{ github.event.workflow.name }}"
           echo "Title: ${{ github.event.inputs.titleCustom }}"
           echo "Selsect: ${{ github.event.inputs.selectCustom }}"
           echo "Checkbox: ${{ github.event.inputs.checkboxCustom }}"
