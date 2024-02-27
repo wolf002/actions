@@ -9,7 +9,7 @@ jobs:
       JOB_CUSTOM_VAR: JON
     steps:
       - name: Set new var
-        run: echo "NEw_CUSTOM_VAR=NEW VALUE" >> $GITHUB_ENV
+        run: echo "NEW_CUSTOM_VAR=NEW VALUE" >> $GITHUB_ENV
       - name: Event vars
         env:
           STRP_CUSTOM_VAR: STRP 3
