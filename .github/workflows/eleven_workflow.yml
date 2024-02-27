@@ -1,0 +1,20 @@
+name: eleven workflow
+on: [push]
+env:
+  WF_CUSTOM_VAR: WF 1
+jobs:
+  run-first-commnads:
+    runs-on: ubuntu-latest
+    env:
+      JOB_CUSTOM_VAR: JON
+    steps:
+      - name: Event vars
+        env:
+          STRP_CUSTOM_VAR: STRP 3
+        run: |
+          echo "name: eleven workflow"
+          echo '${{ github.ref}}'
+          echo $WF_CUSTOM_VAR
+          echo '${{ env.WF_CUSTOM_VAR}}'
+          echo $JOB_CUSTOM_VAR
+          echo $STRP_CUSTOM_VAR
