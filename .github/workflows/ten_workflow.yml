@@ -1,6 +1,6 @@
 name: ten workflow
 on: [push]
-
+run-name: ${{ github.actor }} run at ${{ github.event.head_commit.timestamp }}
 jobs:
   run-ten-commnads:
     runs-on: ubuntu-latest
@@ -8,8 +8,10 @@ jobs:
       - name: Event vars
         id: "Context-amd-Expression"
         run: |
-          echo "vars amd Expression: ${{ toJson(vars) }}"
           echo "github: ${{ toJson(github) }}"
           echo "runner: ${{ toJson(runner) }}"
           echo "job: ${{ toJson(job) }}"
+          echo "steps: ${{ toJson(steps) }}"
+      - name: "Dysplay step"
+        run: |
           echo "steps: ${{ toJson(steps) }}"
