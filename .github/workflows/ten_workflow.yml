@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Event vars
-        id: "Context amd Expression"
+        id: "Context-amd-Expression"
         run: |
-          echo "Context amd Expression: ${{ toJson(context) }}"
+          echo "vars amd Expression: ${{ toJson(vars) }}"
           echo "github: ${{ toJson(github) }}"
           echo "runner: ${{ toJson(runner) }}"
           echo "job: ${{ toJson(job) }}"
