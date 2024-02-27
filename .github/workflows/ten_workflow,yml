@@ -1,0 +1,15 @@
+name: ten workflow
+on: [push]
+
+jobs:
+  run-ten-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event vars
+        id: "Context amd Expression"
+        run: |
+          echo "Context amd Expression: ${{ toJson(context) }}"
+          echo "github: ${{ toJson(github) }}"
+          echo "runner: ${{ toJson(runner) }}"
+          echo "job: ${{ toJson(job) }}"
+          echo "steps: ${{ toJson(steps) }}"
