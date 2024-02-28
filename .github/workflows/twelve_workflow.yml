@@ -4,6 +4,7 @@ on: [push]
 jobs:
   run-first-commnads:
     runs-on: ubuntu-latest
+    environment: "production"
     steps:
       - name: Our vars & secrets
         run: |
