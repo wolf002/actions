@@ -25,4 +25,4 @@ jobs:
     if: ${{ failure() }}
     steps:
       - name: Second step
-        run: "First job was failed"
+        run: echo "First job was failed"
