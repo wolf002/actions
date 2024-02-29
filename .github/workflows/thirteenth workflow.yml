@@ -5,8 +5,9 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      #      - name: First step
-      #        run: exit 1
+      - name: First step
+        id: errpr-step
+        run: exit 1
       - name: Run on canceled
         if: ${{ cancelled() }}
         run: echo "canceled"
@@ -17,7 +18,7 @@ jobs:
         if: ${{ success() }}
         run: echo "Run on success."
       - name: Run on failure
-        if: ${{ failure() }}
+        if: ${{ failure() && steps.errpr-step.conclusion == 'failure' }}
         run: echo "Run on failure."
   second-job:
     runs-on: ubuntu-latest
