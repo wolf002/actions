@@ -11,3 +11,13 @@ jobs:
         with:
           name: math.txt
           path: math.txt
+  second-job:
+    runs-on: ubuntu-latest
+    needs: [run-first-commnads]
+    steps:
+      - name: Download math file
+        uses: actions/download-artifact@v3
+        with:
+          name: math.txt
+      - name: Read math file
+        run: cat math.txt
