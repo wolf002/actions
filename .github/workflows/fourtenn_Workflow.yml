@@ -11,7 +11,10 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: "cache file"
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+            ${{ runner.os }}-
       - name: Display cache
         run: echo '${{ toJSON(steps.cache-step.outputs) }}'
       - name: Install node modules
