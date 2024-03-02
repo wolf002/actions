@@ -7,7 +7,7 @@ jobs:
       - name: MAth expression
         run: expr 1 + 1 > math.txt
       - name: UPload math file
-       uses: actions/upload-artifact@v3
-       with:
-        name: math.txt
-        path: math.txt
+        uses: actions/upload-artifact@v3
+        with:
+          name: math.txt
+          path: math.txt
