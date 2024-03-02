@@ -30,7 +30,7 @@ jobs:
           path: math.txt
   second-job:
     runs-on: ubuntu-latest
-    needs: [another-commnads]
+    needs: [another-job]
     steps:
       - name: Download math file
         uses: actions/download-artifact@v3
