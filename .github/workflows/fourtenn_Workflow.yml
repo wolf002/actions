@@ -13,6 +13,6 @@ jobs:
           path: ~/.npm
           key: "cache file"
       - name: Display cache
-        run: echo '${{ toJson(steps.cache-step.outputs) }}'
+        run: echo ${{ steps.cache-step.outputs.cache-hit }}
       - name: Install node modules
         run: npm install
