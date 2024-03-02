@@ -1,0 +1,18 @@
+name: Fourteen workflow
+on: [workflow_dispatch]
+
+jobs:
+  run-fourteen-commnads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache_node_modules
+        id: cache-step
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: "cache file"
+      - name: Display cache
+        run: echo ${{steps.cache-step.outputs}}
+      - name: Install node modules
+        run: npm install
