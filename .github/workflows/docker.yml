@@ -9,4 +9,6 @@ jobs:
         NODE_ENV: test
     steps:
       - name: Docker node version
-        run: node -v
+        run: |
+          node -v
+          cat /etc/os-release
