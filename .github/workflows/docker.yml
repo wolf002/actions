@@ -16,5 +16,5 @@ jobs:
         uses: docker://node:18-buster-slim
         with:
           args: |
-            node -v
+            -v
             cat /etc/os-release
