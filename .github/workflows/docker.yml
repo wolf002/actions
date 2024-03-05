@@ -3,11 +3,16 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      customMysql:
+        image: mysql
     container:
       image: node
       env:
         NODE_ENV: test
     steps:
+      - name: Display server image
+        run: echo '${{ toJSON(job.services) }}'
       - name: Docker node version
         run: |
           node -v
