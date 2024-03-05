@@ -12,3 +12,9 @@ jobs:
         run: |
           node -v
           cat /etc/os-release
+      - name: Docker new version
+        uses: docker://node:18-buster-slim
+        with:
+          args: |
+            node -v
+            cat /etc/os-release
