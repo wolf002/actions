@@ -1,0 +1,12 @@
+name: Docker test
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node
+      env:
+        NODE_ENV: test
+    steps:
+      - name: Docker node version
+        run: node -v
