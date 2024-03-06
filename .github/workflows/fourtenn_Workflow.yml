@@ -6,16 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Cache_node_modules
-        id: cache-step
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
-            ${{ runner.os }}-
-      - name: Display cache
-        run: echo '${{ toJSON(steps.cache-step.outputs) }}'
-      - name: Install node modules
-        run: npm install
+      - name: Custom action
+        uses: ./.github/actions/cache-node-modules
