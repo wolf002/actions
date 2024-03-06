@@ -5,6 +5,10 @@ inputs:
     default: 'true'
     description: 'Caching'
     required: false
+outputs:
+  status:
+    description: 'Status'
+    value: 'active'
 runs:
   using: 'composite'
   steps:

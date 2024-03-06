@@ -7,6 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Custom action
+        id: cache
         uses: ./.github/actions/cache-node-modules
         with:
           caching: "false" # default: true
+      - name: Display output caching
+        run: echo '${{ toJSON(steps.cache.outputs) }}'
