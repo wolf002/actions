@@ -1,0 +1,10 @@
+name: cuncurrency
+on: workflow_dispatch
+concurrency: cuncurrency-test
+jobs:
+  test-timeout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing timeout
+        run: sleep 25
+        timeout-minutes: 1
